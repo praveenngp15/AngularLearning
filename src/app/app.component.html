@@ -9,9 +9,13 @@
 <div class="courses">
 
 
-  <course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"></course-card>
-  <course-card (courseSelected)="onCourseSelected($event)" [course]="rxjsCourse"></course-card>
-  <course-card (courseSelected)="onCourseSelected($event)" [course]="ngrxCourse"></course-card>
+  <course-card *ngFor="let course of courses;
+                      index as i; First as isFirst;last as isLast;even as isEven,odd as isOdd"
+               [class.is-first]="isFirst"
+               [class.is-last]="isLast"
+               [class.is-even]="isEven"
+               [class.is-odd]="isOdd"
+               [cardIndex]="i + 1" (courseSelected)="onCourseSelected($event)" [course]="course"></course-card>
 
 </div>
 
