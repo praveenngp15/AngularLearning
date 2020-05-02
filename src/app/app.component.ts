@@ -13,4 +13,7 @@ export class AppComponent {
       rxjsCourse  = COURSES[1];
       ngrxCourse = COURSES[2];
 
+  onCourseSelected(course:Course) {
+      console.log('From app' + course.description)
+  }
 }
